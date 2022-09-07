@@ -19,3 +19,17 @@ node_modules/webpack/bin/webpack.js
 
 ## fileload para o webpack compilar(na vdd copia) img de src para dist
 npm install --save-dev file-loader@0.11.2
+
+## download pure css
+https://unpkg.com/purecss@1.0.0/build/pure-min.css
+
+# plugin webpack para ele ler css - pg 126 e 127
+❯ npm install --save-dev style-loader@0.18.2 css-loader@0.28.4
+
+
+
+
+# inciar aplicacao
+`` npm start``
+# coloca arquivo compiilados na pasta dist 
+`` npm build``
