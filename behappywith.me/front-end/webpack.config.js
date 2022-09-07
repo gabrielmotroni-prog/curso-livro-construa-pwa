@@ -3,7 +3,7 @@ const htmlWebPackPlugin = require("html-webpack-plugin"); //mais rapido html - g
 const path = require("path");
 
 module.exports = {
-  entry: path.join(__dirname, "src/index.jsx"), //aode webpack encontrara todos arquivos requisitados
+  entry: path.join(__dirname, "src/index.jsx"), //aode webpack encontrara todos arquivos requisitados - a porta de entrada. Se nao tiver aqui n vai
   output: {
     path: path.join(__dirname, "dist"), // especificar diretorio final dos arquios compilados e minificados  serao salvos
     filename: "bundle.js", // agrupar.js - nome do arquivo padrao webpack
@@ -19,8 +19,15 @@ module.exports = {
     }),
   ],
   module: {
-    //regras de transformacao
+    //regras de transformacao - diversas regras tratando assuntos diferentes
     rules: [
+      {
+        test: /\.css$/,
+        use: [ //plugins para webpacj trabalhar com css
+          {loader: "style-loader"},
+          {loader: "css-loader"},
+        ]
+      },
       {
         test: /.jsx?$/,
         exclude: /node_modules/,
