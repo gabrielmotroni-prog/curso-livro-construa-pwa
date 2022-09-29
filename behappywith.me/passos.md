@@ -26,6 +26,9 @@ https://unpkg.com/purecss@1.0.0/build/pure-min.css
 # plugin webpack para ele ler css - pg 126 e 127
 ❯ npm install --save-dev style-loader@0.18.2 css-loader@0.28.4
 
+# pluginn que extrai css do react - pra n misturar com js evitando ficar lento
+ npm install --save-dev extract-text-webpack-plugin@2.1.2
+
 
 
 
