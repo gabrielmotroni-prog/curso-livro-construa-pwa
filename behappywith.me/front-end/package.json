@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "build":"node_modules/webpack/bin/webapack.js"
+    "build": "node_modules/webpack/bin/webpack.js"
   },
   "author": "Gabriel dos Santos Motroni <gabriel.motroni@hotmail.com>(site`)",
   "license": "ISC",
@@ -18,7 +18,10 @@
     "babel-loader": "^7.1.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
+    "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.5.0"
   }

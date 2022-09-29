@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const htmlWebPackPlugin = require("html-webpack-plugin"); //mais rapido html - geracao automatica de html
+const ExtractTextPlugin = require('extract-text-webpack-plugin'); //extrai css do react para  carregamento mais rapido
 const path = require("path");
 
 module.exports = {
@@ -17,16 +18,17 @@ module.exports = {
       filename: "index.html", //html gerado pelo output do webpack
       template: path.join(__dirname, "src/index.html"), // template para copiar e acrescentar usado como base pelo webpack
     }),
+   new ExtractTextPlugin('style.css')
   ],
   module: {
     //regras de transformacao - diversas regras tratando assuntos diferentes
     rules: [
-      {
+      {  //plugins para webpack trabalhar com css
         test: /\.css$/,
-        use: [ //plugins para webpacj trabalhar com css
-          {loader: "style-loader"},
-          {loader: "css-loader"},
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       },
       {
         test: /.jsx?$/,
